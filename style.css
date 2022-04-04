@@ -1,0 +1,297 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    height: 140px;
+    background-color: #fa7229;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px ;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 100px;
+    margin-right: 10px;
+}
+
+
+header nav a{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+header nav a:hover{
+    background: #ff9f64;
+    border-radius: 50px;
+}
+
+img{
+    padding: 20px;
+}
+
+.wrapper .outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 900px;
+}
+
+.wrapper .card{
+    background: rgb(255, 224, 200);
+    width: 400px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    animation: animate 12s linear infinite;
+    animation-delay: calc(6s * var(--delay));
+    bottom: 10%;
+    height: 700px;
+    text-align: justify;
+    margin-right: 20px;
+}
+.outer:hover .card{
+    animation-play-state: paused;
+    
+}
+.wrapper .card:last-child{
+    animation-delay: calc(-2 * var(--delay));
+}
+@keyframes animate {
+    0%{
+      opacity: 0;
+      transform: translateY(100%) scale(0.5);
+}
+5%, 20%{
+      opacity: 0.4;
+      transform: translateY(100%) scale(0.7);
+}
+25%, 40%{
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0%) scale(1);
+}
+45%, 60%{
+      opacity: 0.4;
+      transform: translateY(-100%) scale(0.7);
+}
+65%, 100%{
+      opacity: 0;
+      transform: translateY(-100%) scale(0.5);
+}
+}
+.card .content{
+    display: flex;
+    align-items: center;
+}
+
+.card .img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.card .details{
+    margin-left: 30px;
+}
+.details span{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card a:hover{
+    transform: scale(0.94);
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    align-items: center;
+  }
+
+  .button1 {background-color: #ffa023;} /* Green */
+
+  #Producto .Imagen1{
+    position: absolute;
+    left: 15%;
+    top: 200px;
+}
+
+#Producto .Imagen_2{
+    position: absolute;
+    left: 60%;
+    top: 200px;
+}
+
+#Producto .Imagen_3{
+    position: absolute;
+    left: 15%;
+    top: 700px;
+}
+
+#Producto .Imagen_4{
+    position: absolute;
+    left: 60%;
+    top: 700px;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 700px;
+    margin-top: 100px;
+}
+
+.lbl-menu{
+    background-color: rgb(246, 143, 96);
+}
+
+.lbl-menu label{
+    display: inline-block;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.lbl-menu label:hover{
+    background: rgb(245, 179, 148);
+}
+
+.content{
+    position: relative;
+}
+
+.content div{
+    position: absolute;
+    line-height: 1.8;
+    transition: all 600ms ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.90);
+    padding: 30px;
+    background: rgb(255, 255, 255);
+    padding-bottom: 40px;
+}
+
+#radio1,#radio2,#radio3{
+    display: none;
+}
+
+#radio1:checked ~ .tab1,
+#radio2:checked ~ .tab2,
+#radio3:checked ~ .tab3{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.content div::after{
+position: absolute;
+content: "";
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-top: 10px solid transparent;
+border-bottom: 10px solid rgb(0, 0, 0);
+bottom: 100%;
+left: 28px;
+}
+
+.content .tab2:after{
+    left: 122px;
+}
+
+.content .tab3:after{
+   left: 210px;
+}
+
+.form{
+    background-color: #ffff;
+    width: 90%;
+    position: absolute;
+    max-width:400px ;
+    border-radius: 1em;
+    padding: 3.5em 1.5em;
+    margin-left: 700px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form__container{
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100%;
+}
+
+.form__title{
+    text-align: center;
+    font-size: 1.9em;
+    margin-bottom: .4em;
+}
+
+.form__input{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    padding: .8em 1em;
+    outline: none;
+    border: none;
+    border: 1px solid #bbb0b0;
+    border-radius: 0.2em;
+}
+
+.form__input__mesage{
+    resize: none;
+    padding: 1.8em 1em;
+    margin-bottom: .5em;
+}
+
+.form__cta{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    background-color: #089fe0;
+    color: #fff;
+    border: none;
+    font-weight: 300;
+    padding: .7em 0;
+    border-radius: .2em;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+@media (max-width:450px){
+    .form{
+        padding: 3.5em 1em;
+    }
+}
+
+.calendario{
+    padding-top: 250px;
+    margin: 20px;
+    align-content: center;
+}
